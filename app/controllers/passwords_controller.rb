@@ -6,8 +6,7 @@ class PasswordsController < ApplicationController
     @passwords = current_user.passwords
   end
 
-  def show
-  end
+  def show;end
 
   def new
     @password = Password.new
