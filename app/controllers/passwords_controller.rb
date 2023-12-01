@@ -32,6 +32,12 @@ class PasswordsController < ApplicationController
       render :edit,  status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @password.destroy
+    redirect_to root_path
+  end
+
   private
   def password_params
     params.require(:password).permit(:url, :username, :password)
