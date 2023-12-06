@@ -29,3 +29,7 @@
 
 <h3 class= "mb-0">Share</h3>
 <%= link_to "Add a User", new_password_share_path(@password) %>
+
+<% @password.users.excluding(current_user).each do |user| %>
+<div><%= user.email%></div>
+<% end %>
