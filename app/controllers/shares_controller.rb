@@ -3,9 +3,9 @@ class SharesController < ApplicationController
   before_action :set_password
 
   def new
-    @users = Users.excluding(current_user)
-                  .excluding(@password.users)
-    @users
+    @users = User.excluding(current_user)
+                .excluding(@password.users) #Excludes users that were already assigned
+    @user_password = UserPassword.new
   end
 
   def create
