@@ -30,9 +30,10 @@
 <h3 class= "mb-0">Share</h3>
 <%= link_to "Add a User", new_password_share_path(@password) %>
 
-<% @password.users.excluding(current_user).each do |user| %>
+<% @password.user_passwords.includes(:user).each do |user_password| %>
   <div class="flex justify-between items-center">
-    <div><%= user.email%></div>
-    <div><%= button_to "Remove", password_share_path(@password, user), method: :delete, data: {turbo_confirm: "Are you sure?"} %></div>
+    <div><%= user_password.user.email %></div>
+    <div><%= user_password.role %></div>
+    <div><%= button_to "Remove", password_share_path(@password, user_password.user), method: :delete, data: {turbo_confirm: "Are you sure?"} %></div>
   </div>
 <% end %>
