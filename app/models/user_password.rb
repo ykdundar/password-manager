@@ -13,12 +13,19 @@ class UserPassword < ApplicationRecord
     role == "owner"
   end
 
-  def viewer
+  def viewer?
     role == "viewer"
   end
 
-  def editor
+  def editor?
     role == "editor"
   end
 
+  def editable?
+    owner? || editor?
+  end
+
+  def shareable?
+    owner?
+  end
 end
