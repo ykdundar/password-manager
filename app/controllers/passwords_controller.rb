@@ -1,8 +1,8 @@
 class PasswordsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_password, except: [:index, :new, :create]
-  before_action :require_editor_permissions, only: [:edit, :update, :destroy]
-
+  before_action :require_editor_permissions, only: [:edit, :update]
+  before_action :require_owner_permissions, only: :destroy
   def index
     @passwords = current_user.passwords
   end
@@ -50,6 +50,10 @@ class PasswordsController < ApplicationController
   end
 
   def require_editor_permissions
+    redirect_to @password unless @password.editable_by?(current_user)
+  end
+
+  def require_owner_permissions
     redirect_to @password unless @password.editable_by?(current_user)
   end
 end

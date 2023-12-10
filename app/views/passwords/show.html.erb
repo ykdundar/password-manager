@@ -37,7 +37,7 @@
     <div class="flex justify-between items-center">
       <div><%= user_password.user.email %></div>
       <div><%= user_password.role %></div>
-      <div><%= button_to "Remove", password_share_path(@password, user_password.user), method: :delete, data: {turbo_confirm: "Are you sure?"} if @password.editable_by?(current_user) %></div>
+      <div><%= button_to "Remove", password_share_path(@password, user_password.user), method: :delete, data: {turbo_confirm: "Are you sure?"} if @password.deletable_by?(current_user) %></div>
     </div>
   <% end %>
 </div>

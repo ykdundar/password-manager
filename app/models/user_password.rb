@@ -28,4 +28,8 @@ class UserPassword < ApplicationRecord
   def shareable?
     owner?
   end
+
+  def deletable?
+    owner?
+  end
 end
