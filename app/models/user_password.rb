@@ -8,8 +8,9 @@ class UserPassword < ApplicationRecord
   belongs_to :password
 
   validates :role, presence: true, inclusion: {in: ROLES}
-  
-  attributes :role, default :viewe
+
+  attribute :role, default: :viewer
+
   def owner?
     role == "owner"
   end
