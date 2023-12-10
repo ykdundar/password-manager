@@ -12,7 +12,7 @@
       </svg>
     <% end %>
   </h1>
-  <%= link_to "Edit", edit_password_path%>
+  <%= link_to "Edit", edit_password_path(@password) if @password.editable_by(current_user)%>
 </div>
 <h3>Credentials</h3>
 <h6 class = "text-xs mb-1 mt-4">Username / Email</h6>
@@ -28,7 +28,7 @@
 </div>
 
 <h3 class= "mb-0">Share</h3>
-<%= link_to "Add a User", new_password_share_path(@password) %>
+<%= link_to "Add a User", new_password_share_path(@password) if @password.shareable_by(current_user) %>
 
 <% @password.user_passwords.includes(:user).each do |user_password| %>
   <div class="flex justify-between items-center">
