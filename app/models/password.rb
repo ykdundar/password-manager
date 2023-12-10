@@ -17,7 +17,7 @@ class Password < ApplicationRecord
     user_passwords.find_by(user: user)&.editable?
   end
 
-  def shareable?(user)
+  def shareable_by?(user)
     user_passwords.find_by(user: user)&.shareable?
   end
 end
