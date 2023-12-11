@@ -13,6 +13,8 @@
   </div>
   <div>
     <%= form.submit%>
-    <%= form.button "Delete", formmethod: :delete, data: { confirm: "Are you sure?" } %>
+    <%= button_tag "Delete", form: "delete_password" if user_password.deletable? %>
   </div>
 <%end%>
+
+<%= form_with model: password, method: :delete, id: "delete_password", data: { confirm: "Are you sure?" } %>
