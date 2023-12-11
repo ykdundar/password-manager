@@ -32,6 +32,6 @@ class SharesController < ApplicationController
   end
 
   def require_shareable_permission
-    redirect_to @password unless user_password.shareable?
+    redirect_to @password unless current_user_password.shareable?
   end
 end
