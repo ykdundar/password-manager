@@ -1,25 +1,27 @@
-# README
+# Password Safe
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Table of Contents
 
-Things you may want to cover:
+1. [Description](#description)
+2. [Key Features](#key-features)
+3. [Website](#website)
 
-* Ruby version
 
-* System dependencies
+## Description
 
-* Configuration
+Password Safe is a secure and user-friendly password manager designed to help you store and manage your passwords and sensitive information with ease.
 
-* Database creation
+## Key Features
 
-* Database initialization
+- **Secure Storage:** Utilizes strong encryption techniques to securely store usernames, passwords, and other sensitive information.
+  
+- **Copy to Clipboard:** Convenient copy-to-clipboard functionality for quick access to passwords during login sessions.
+  
+- **User Roles:** Assign different roles and permissions to users, allowing secure sharing of passwords with trusted individuals or teams.
+  
+## Website
 
-* How to run the test suite
+Visit the Password Safe website to access the application:
 
-* Services (job queues, cache servers, search engines, etc.)
+[Password Safe Website](https://password-safe.fly.dev/passwords/new)
 
-* Deployment instructions
-
-* ...
-# password-manager
